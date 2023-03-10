@@ -1,0 +1,57 @@
+###
+### A complete description of a Prefect Deployment for flow 'main'
+###
+name: titanic-dep
+description: null
+version: f8d1cecc46d84dbb0f51634ac10140d2
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: null
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: null
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: main
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: ./
+  _block_document_id: 77d00870-8799-4393-a49e-183775c7748c
+  _block_document_name: titanic-process-infra
+  _is_anonymous: false
+  block_type_slug: process
+  _block_type_slug: process
+storage:
+  basepath: ./
+  _block_document_id: 7dbe956e-5d6f-46ae-ad50-81dcc01b3716
+  _block_document_name: titanic-storage-block
+  _is_anonymous: false
+  block_type_slug: local-file-system
+  _block_type_slug: local-file-system
+path: ''
+entrypoint: Transform.py:main
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    path:
+      title: path
+      default: data/titanic.csv
+      position: 0
+    connection_string:
+      title: connection_string
+      default: postgresql://root:root@localhost:5432/load
+      position: 1
+  required: null
+  definitions: null
+timestamp: '2023-03-10T15:26:01.397535+00:00'
